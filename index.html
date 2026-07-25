@@ -133,6 +133,7 @@
     justify-content:center;
     background:var(--bg-cream-deep);
     overflow:hidden;
+    padding:3rem 2rem 0;
   }
 
   .hero__portrait-glow{
@@ -145,28 +146,25 @@
     filter:blur(10px);
   }
 
-  .hero__portrait-figure{
+ .hero__portrait-figure{
     position:relative;
     width:min(100%, 560px);
     height:100%;
     display:flex;
     align-items:flex-end;
     justify-content:center;
-  }
+    padding-top:4rem;
+}
 
-  .hero__portrait-figure img{
-   .hero__portrait-image{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    object-position:center bottom;
+ .hero__portrait-image{
+    width:88%;
+    max-width:520px;
+    height:auto;
     display:block;
-}width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center top;
-    display:block;
-  }
+    margin:0 auto;
+    align-self:flex-end;
+}
+   
 
   /* Placeholder illustration (used until final artwork is supplied) */
   .hero__portrait-placeholder{
