@@ -130,13 +130,27 @@
 
   .hero__portrait-glow{
     position:absolute;
-    bottom:-10%;
-    width:70%;
-    height:70%;
+
+    width:620px;
+    height:620px;
+
+    right:40px;
+    bottom:-120px;
+
     border-radius:50%;
-    background:radial-gradient(circle, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 70%);
-    filter:blur(10px);
-  }
+
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,0.70) 0%,
+        rgba(255,255,255,0.38) 32%,
+        rgba(255,255,255,0.14) 58%,
+        rgba(255,255,255,0) 78%
+    );
+
+    filter:blur(28px);
+
+    pointer-events:none;
+}
 
 
  .hero__portrait{
