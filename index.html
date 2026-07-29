@@ -380,79 +380,55 @@
   }
 
   /* ================= Philosophy ================= */
-  .philosophy{
-    background:var(--bg-cream-deep);
-    padding:min(12vw, 8.5rem) 6vw;
-    border-top:1px solid var(--rule);
-  }
-
-  .philosophy__inner{
-    max-width:720px;
-    margin:0 auto;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+  .philosophy__statement{
+    margin-top:90px;
     text-align:center;
-  }
+}
 
-  .philosophy__eyebrow{
-    font-family:"Cormorant Garamond", serif;
-    font-weight:500;
-    font-size:clamp(1.05rem, 1.6vw, 1.35rem);
-    letter-spacing:0.16em;
-    color:var(--gold);
-    text-transform:uppercase;
-  }
-
-  .philosophy__divider{
-    width:52px;
-    height:1px;
-    background:var(--rule);
-    margin:2.2rem 0 4rem;
-  }
-
-  .philosophy__pairs{
-    display:flex;
-    flex-direction:column;
-    gap:3.4rem;
-    width:100%;
-  }
-
-  .philosophy__pair{
-    display:flex;
-    flex-direction:column;
-    gap:0.4rem;
-  }
-
-  .philosophy__line{
+.philosophy__line{
     font-family:"Noto Serif JP", serif;
-    letter-spacing:0.03em;
-    line-height:1.5;
-  }
-
-  .philosophy__line--muted{
-    font-weight:500;
-    font-size:clamp(1.3rem, 2.6vw, 1.9rem);
-    color:var(--ink-soft);
-    opacity:0.62;
-  }
-
-  .philosophy__line--strong{
-    font-weight:700;
-    font-size:clamp(1.6rem, 3.4vw, 2.4rem);
     color:var(--ink);
-  }
+}
 
-  .philosophy__note{
-    margin-top:4.5rem;
-    font-family:"Noto Sans JP", sans-serif;
-    font-weight:400;
-    font-size:clamp(0.92rem, 1.05vw, 1.02rem);
-    line-height:2.1;
-    color:var(--ink-soft);
-    letter-spacing:0.02em;
-    max-width:36ch;
-  }
+.philosophy__line--primary{
+    font-size:2.3rem;
+    color:#8b8378;
+    margin-bottom:12px;
+}
+
+.philosophy__line--strong{
+    font-size:3.2rem;
+    font-weight:700;
+}
+
+.philosophy__space{
+    height:70px;
+}
+
+.philosophy__line--secondary{
+    font-size:2rem;
+    color:#8b8378;
+    margin-bottom:10px;
+}
+
+.philosophy__line--accent{
+    font-size:2.8rem;
+    font-weight:700;
+}
+
+.philosophy__note{
+    width:620px;
+    max-width:90%;
+    margin:90px auto 0;
+    text-align:left;
+}
+
+.philosophy__note p{
+    font-size:1rem;
+    line-height:2.2;
+    color:#6f675d;
+    margin-bottom:2rem;
+}
 
   /* ---------- Responsive ---------- */
   @media (max-width: 480px){
