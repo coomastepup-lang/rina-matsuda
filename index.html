@@ -242,7 +242,64 @@
     .hero__name{ font-size:2.4rem; }
     .hero__headline{ font-size:1.5rem; }
   }
+/* ---------- Mobile Hero ---------- */
 
+@media (max-width:768px){
+
+  .hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+    background:var(--bg-cream);
+  }
+
+  .hero__portrait{
+    order:1;
+    background:var(--bg-cream-deep);
+    justify-content:center;
+    align-items:flex-end;
+    padding:40px 0 0;
+    min-height:auto;
+  }
+
+  .hero__portrait-figure{
+    justify-content:center;
+  }
+
+  .hero__portrait-image{
+    width:82%;
+    max-width:360px;
+    right:0;
+    transform:none;
+  }
+
+  .hero__text{
+    order:2;
+    padding:48px 28px 64px;
+    text-align:left;
+  }
+
+  .hero__name{
+    font-size:3rem;
+    line-height:1.05;
+  }
+
+  .hero__subtitle{
+    font-size:1.1rem;
+  }
+
+  .hero__headline{
+    font-size:2rem;
+    line-height:1.5;
+  }
+
+  .hero__desc{
+    max-width:100%;
+    font-size:0.95rem;
+    line-height:2;
+  }
+
+}
+  
   /* ================= About ================= */
   .about{
     padding:min(13vw, 9rem) 6vw;
