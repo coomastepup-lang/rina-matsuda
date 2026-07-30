@@ -212,36 +212,159 @@
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 900px){
-    .hero{
-      grid-template-columns:1fr;
-      grid-template-rows:auto auto;
-      background:var(--bg-cream);
-      min-height:auto;
-    }
+  @media (max-width:900px){
 
-    .hero__text{
-      order:2;
-      padding:8vw 7vw 10vw;
-      max-width:none;
-      align-items:flex-start;
-    }
+  /* ---------- Hero ---------- */
 
-    .hero__portrait{
-      order:1;
-      min-height:60vh;
-      background:var(--bg-cream-deep);
-    }
-
-    .hero__desc{
-      max-width:none;
-    }
+  .hero{
+    grid-template-columns:1fr;
+    background:var(--bg-cream);
+    min-height:auto;
   }
 
-  @media (max-width: 480px){
-    .hero__name{ font-size:2.4rem; }
-    .hero__headline{ font-size:1.5rem; }
+  .hero__portrait{
+    order:1;
+    justify-content:center;
+    align-items:flex-end;
+    background:var(--bg-cream-deep);
+    padding:40px 0 0;
+    min-height:auto;
   }
+
+  .hero__portrait-figure{
+    justify-content:center;
+  }
+
+  .hero__portrait-image{
+    width:82%;
+    max-width:360px;
+    right:0;
+    transform:none;
+  }
+
+  .hero__text{
+    order:2;
+    padding:48px 28px 64px;
+    max-width:none;
+  }
+
+  .hero__desc{
+    max-width:100%;
+  }
+
+  /* ---------- About ---------- */
+
+  .about{
+    padding:90px 28px;
+  }
+
+  .about__grid{
+    grid-template-columns:1fr;
+    gap:56px;
+  }
+
+  /* ---------- Philosophy ---------- */
+
+  .philosophy{
+    padding:90px 28px;
+  }
+
+  .philosophy__statement{
+    margin-top:70px;
+  }
+
+  .philosophy__line--primary{
+    font-size:1.7rem;
+  }
+
+  .philosophy__line--strong{
+    font-size:2.5rem;
+  }
+
+  .philosophy__line--secondary{
+    font-size:1.6rem;
+  }
+
+  .philosophy__line--accent{
+    font-size:2.3rem;
+  }
+
+  .philosophy__space{
+    height:48px;
+  }
+
+  .philosophy__note{
+    width:100%;
+    margin-top:60px;
+  }
+
+  /* ---------- Community ---------- */
+
+  .community{
+    padding:90px 28px;
+  }
+
+  .community__grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  /* ---------- Contact ---------- */
+
+  .contact{
+    padding:90px 28px;
+  }
+
+  .contact__card{
+    padding:40px 28px;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .hero__name{
+    font-size:2.3rem;
+  }
+
+  .hero__headline{
+    font-size:1.45rem;
+  }
+
+  .hero__portrait-image{
+    width:88%;
+    max-width:300px;
+  }
+
+  .philosophy__line--primary{
+    font-size:1.5rem;
+  }
+
+  .philosophy__line--strong{
+    font-size:2.1rem;
+  }
+
+  .philosophy__line--secondary{
+    font-size:1.4rem;
+  }
+
+  .philosophy__line--accent{
+    font-size:2rem;
+  }
+
+  .community{
+    padding:70px 20px;
+  }
+
+  .community__card{
+    padding:1.8rem 1.5rem;
+  }
+
+  .contact{
+    padding:70px 20px;
+  }
+
+}
 /* ---------- Mobile Hero ---------- */
 
 @media (max-width:768px){
