@@ -38,8 +38,13 @@
     --portrait-bg:#efe7da;
   }
 
-  *{ margin:0; padding:0; box-sizing:border-box; }
-
+ 　*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+　}
   .sr-only{
     position:absolute;
     width:1px;
@@ -51,10 +56,38 @@
     white-space:nowrap;
     border:0;
   }
+.skip-link{
+  position:absolute;
+  left:1rem;
+  top:-60px;
+  z-index:9999;
 
-  html, body{ min-height:100%; }
+  padding:.8rem 1.2rem;
+
+  background:#2f2a24;
+  color:#fff;
+
+  text-decoration:none;
+  border-radius:6px;
+
+  transition:top .25s ease;
+}
+
+.skip-link:focus{
+  top:1rem;
+}
+  
+ html{
+    min-height:100%;
+    overflow-x:hidden;
+}
+
+body{
+    min-height:100%;
+}
 
   body{
+    overflow-x:hidden;
     font-family:"Noto Sans JP", sans-serif;
     background:var(--bg-cream);
     color:var(--ink);
