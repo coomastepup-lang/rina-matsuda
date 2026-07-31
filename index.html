@@ -1230,13 +1230,17 @@ section{
     min-width:0;
 }
 <style>
-  @media (max-width: 768px) {
-  /* 1. 全要素の幅計算を枠線・余白込みにする（はみ出し防止の最重要設定） */
+@media (max-width: 768px) {
+  /* 1. 全要素の位置ズレ・はみ出し原因をすべて強制リセットする */
   *, *::before, *::after {
     box-sizing: border-box !important;
+    max-width: 100% !important;
+    transform: none !important; /* 右に押し出すアニメーションやズレを解除 */
+    left: 0 !important;
+    right: 0 !important;
   }
 
-  /* 2. 画面全体の余白・枠線をリセットし、画面幅（100%）に収める */
+  /* 2. ページ全体の横幅と余白を画面幅にピッタリ収める */
   html, body {
     width: 100% !important;
     max-width: 100vw !important;
@@ -1245,19 +1249,19 @@ section{
     overflow-x: hidden !important;
   }
 
-  /* 3. すべてのカード・枠組み・セクションを画面幅ぴったり（100%）にする */
-  div, section, header, footer, main, article, container, [class] {
-    width: 100% !important; /* ←ここを100%に変更しました！ */
+  /* 3. すべての文章や枠・カードの幅と位置を強制補正 */
+  div, section, header, footer, main, article, p, container, [class] {
+    width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    box-sizing: border-box !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    position: static !important; /* 位置を固定せず上から順に並べる */
   }
 
-  /* 4. 空白や長文による横飛びを防止し、画面端で必ず改行させる */
-  p, h1, h2, h3, h4, span, li, a, div {
+  /* 4. テキストが画面端に来たら確実に次の行へ折り返す */
+  p, h1, h2, h3, h4, span, li, a {
     white-space: normal !important;
     word-break: break-all !important;
     overflow-wrap: anywhere !important;
