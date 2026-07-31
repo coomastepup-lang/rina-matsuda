@@ -1648,20 +1648,26 @@ section{
 </script>
 </main>
 <style>
-  /* 哲学セクションの改行位置を自然にする設定 */
-  .philosophy__line {
-    display: inline-block;
-    word-break: keep-all !important; /* 単語や文脈の途中で勝手に改行されるのを防ぐ */
-    overflow-wrap: normal !important;
-    white-space: nowrap !important;  /* 可能な限り1行に収める */
+  /* 画面幅からはみ出る要素を強制的に折り返して画面内に収める */
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  * {
+    box-sizing: border-box !important;
   }
 
-  /* スマホ画面で文字がはみ出さないようサイズを調整 */
-  @media (max-width: 768px) {
-    .philosophy__line {
-      font-size: 0.95em; /* ほんの少し小さくして1行に綺麗に収める */
-    }
+  p, div, h1, h2, h3, h4, section, article {
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
   }
 </style>
+
 </body>
 </html>
