@@ -1231,45 +1231,45 @@ section{
 }
 <style>
 @media (max-width: 768px) {
-  /* 1. 全要素のサイズ計算を余白込みに変更し、はみ出しをカット */
-  *, *::before, *::after {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-  }
-
-  /* 2. ページ全体の横スクロール・はみ出しを強制禁止 */
+  /* 1. 画面全体の余白・枠線をリセットし、幅を厳格に画面幅へ収める */
   html, body {
     width: 100% !important;
     max-width: 100vw !important;
-    overflow-x: hidden !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow-x: hidden !important;
   }
 
-  /* 3. すべてのコンテナ・枠組みの左右余白をリセット */
-  div, section, header, footer, main, article, .container, [class] {
-    width: 100% !important;
+  /* 2. すべての要素の枠サイズ計算を内側に含める */
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* 3. コンテナやセクション（カード枠）の幅固定を解除し、中央寄せにする */
+  div, section, header, footer, main, article, container, [class] {
     max-width: 100% !important;
+    width: auto !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 
-  /* 4. 文章内の「全角スペース」による画面はみ出し・改行無視を解消 */
+  /* 4. 空白や長文による横飛びを防止し、画面端で必ず改行させる */
   p, h1, h2, h3, h4, span, li, a, div {
     white-space: normal !important;
     word-break: break-all !important;
     overflow-wrap: anywhere !important;
   }
 
-  /* 5. 画像が枠からはみ出るのを防止 */
+  /* 5. 画像が幅を超えないようにする */
   img, svg {
     max-width: 100% !important;
     height: auto !important;
   }
 }
 </style>
+
 </head>
 <body>
 
