@@ -1229,35 +1229,33 @@ section{
 .contact__inner{
     min-width:0;
 }
-  @media (max-width: 768px) {
-      body {
-        padding: 15px;
-        font-size: 15px;
-        line-height: 1.6;
-      }
+ media (max-width: 768px) {
+  /* 1. 画面全体の「横スクロール（はみ出し）」を強制的に禁止する */
+  html, body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-      header, section, footer, .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding-left: 10px;
-        padding-right: 10px;
-        box-sizing: border-box;
-      }
+  /* 2. 全要素の幅計算を枠線・余白込みにして画面内に収める */
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
 
-      h1 { font-size: 1.8rem !important; }
-      h2 { font-size: 1.4rem !important; }
-      h3 { font-size: 1.2rem !important; }
+  /* 3. 幅が固定されている枠やセクションを100%以内に抑える */
+  header, section, footer, div, table, main, article {
+    max-width: 100% !important;
+    width: auto !important;
+    word-break: break-word !important; /* 文字が長すぎても折り返す */
+  }
 
-      img {
-        max-width: 100% !important;
-        height: auto !important;
-      }
-
-      .flex-container, .grid-container, .row {
-        flex-direction: column !important;
-        display: flex !important;
-      }
-    }
+  /* 4. 画像や表などが右にはみ出るのを防ぐ */
+  img, video, iframe, canvas, svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
 </style>
 </head>
 <body>
