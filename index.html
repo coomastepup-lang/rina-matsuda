@@ -1229,51 +1229,44 @@ section{
 .contact__inner{
     min-width:0;
 }
+
 <style>
 @media (max-width: 768px) {
-  /* 1. 全要素の位置ズレ・はみ出し原因をすべて強制リセットする */
-  *, *::before, *::after {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-    transform: none !important; /* 右に押し出すアニメーションやズレを解除 */
-    left: 0 !important;
-    right: 0 !important;
-  }
-
-  /* 2. ページ全体の横幅と余白を画面幅にピッタリ収める */
+  /* 1. ページ全体を画面幅にぴったり固定し、はみ出しをカットする */
   html, body {
     width: 100% !important;
-    max-width: 100vw !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
   }
 
-  /* 3. すべての文章や枠・カードの幅と位置を強制補正 */
-  div, section, header, footer, main, article, p, container, [class] {
+  /* 2. すべての要素の横幅を「画面幅 - 左右余白」に強制収容する */
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* 3. コンテナや文章の幅を90%にし、左右にゆとりを作って画面中央に置く */
+  div, section, header, footer, main, article, container, [class] {
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    position: static !important; /* 位置を固定せず上から順に並べる */
+    padding-left: 20px !important; /* 左右に20pxの安全な隙間を作る */
+    padding-right: 20px !important;
   }
 
-  /* 4. テキストが画面端に来たら確実に次の行へ折り返す */
+  /* 4. テキストを強制的に画面右端で改行させる */
   p, h1, h2, h3, h4, span, li, a {
-    white-space: normal !important;
-    word-break: break-all !important;
-    overflow-wrap: anywhere !important;
-  }
-
-  /* 5. 画像が幅を超えないようにする */
-  img, svg {
+    width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
+    white-space: normal !important;
+    word-break: break-all !important; /* どんな長文も右端で折る */
+    overflow-wrap: anywhere !important;
   }
 }
 </style>
+  
 
 </head>
 <body>
