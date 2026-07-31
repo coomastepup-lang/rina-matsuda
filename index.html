@@ -1230,8 +1230,13 @@ section{
     min-width:0;
 }
 <style>
-@media (max-width: 768px) {
-  /* 1. 画面全体の余白・枠線をリセットし、幅を厳格に画面幅へ収める */
+  @media (max-width: 768px) {
+  /* 1. 全要素の幅計算を枠線・余白込みにする（はみ出し防止の最重要設定） */
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* 2. 画面全体の余白・枠線をリセットし、画面幅（100%）に収める */
   html, body {
     width: 100% !important;
     max-width: 100vw !important;
@@ -1240,19 +1245,15 @@ section{
     overflow-x: hidden !important;
   }
 
-  /* 2. すべての要素の枠サイズ計算を内側に含める */
-  *, *::before, *::after {
-    box-sizing: border-box !important;
-  }
-
-  /* 3. コンテナやセクション（カード枠）の幅固定を解除し、中央寄せにする */
+  /* 3. すべてのカード・枠組み・セクションを画面幅ぴったり（100%）にする */
   div, section, header, footer, main, article, container, [class] {
+    width: 100% !important; /* ←ここを100%に変更しました！ */
     max-width: 100% !important;
-    width: auto !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
   }
 
   /* 4. 空白や長文による横飛びを防止し、画面端で必ず改行させる */
