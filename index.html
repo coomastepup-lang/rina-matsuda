@@ -1273,7 +1273,7 @@ section{
   
 
 </head>
-<body>
+<body style="max-width: 100vw !important; overflow-x: hidden !important; margin: 0 !important; padding: 0 16px !important; box-sizing: border-box !important;">
 
 <a class="skip-link" href="#main">本文へ移動</a>
 
@@ -1345,11 +1345,11 @@ section{
 
     <div class="philosophy__statement reveal">
 
-      <p class="philosophy__line philosophy__line--primary">
+      <p class="philosophy__line philosophy__line--secondary">
         感動を目指さない。
       </p>
 
-      <p class="philosophy__line philosophy__line--strong">
+      <p class="philosophy__line philosophy__line--accent">
         信頼を目指す。
       </p>
 
@@ -1645,5 +1645,26 @@ section{
 })();
 </script>
 </main>
+<style>
+  /* 画面幅からはみ出る要素を強制的に折り返して画面内に収める */
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  * {
+    box-sizing: border-box !important;
+  }
+
+  p, div, h1, h2, h3, h4, section, article {
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+  }
+</style>
 </body>
 </html>
