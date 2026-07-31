@@ -1231,44 +1231,39 @@ section{
 }
 <style>
 @media (max-width: 768px) {
-  /* 1. 全体の幅・位置の固定値をリセットして中央寄せにする */
-  html, body, header, section, footer, main, article, div, .container {
-    width: 100% !important;
-    max-width: 100vw !important;
-    min-width: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    overflow-x: hidden !important;
+  /* 1. 全要素のサイズ計算を余白込みに変更し、はみ出しをカット */
+  *, *::before, *::after {
     box-sizing: border-box !important;
-    transform: none !important; /* 位置のズレを引き起こす変換を解除 */
-    left: 0 !important;
-    right: 0 !important;
+    max-width: 100% !important;
   }
 
-  /* 2. カード枠や各コンテンツブロックを幅いっぱいにフィットさせる */
-  div[class*="card"], div[class*="box"], section > div, .container > div {
+  /* 2. ページ全体の横スクロール・はみ出しを強制禁止 */
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 3. すべてのコンテナ・枠組みの左右余白をリセット */
+  div, section, header, footer, main, article, .container, [class] {
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    box-sizing: border-box !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
 
-  /* 3. すべての要素のサイズ計算を内側に含める */
-  *, *::before, *::after {
-    box-sizing: border-box !important;
-  }
-
-  /* 4. テキストのはみ出しを強制的に改行させる */
-  p, h1, h2, h3, h4, h5, h6, span, li, a {
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
+  /* 4. 文章内の「全角スペース」による画面はみ出し・改行無視を解消 */
+  p, h1, h2, h3, h4, span, li, a, div {
     white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
   }
 
-  /* 5. 画像を画面幅内に納める */
+  /* 5. 画像が枠からはみ出るのを防止 */
   img, svg {
     max-width: 100% !important;
     height: auto !important;
