@@ -1232,37 +1232,41 @@ section{
 
 <style>
 @media (max-width: 768px) {
-  /* 1. ページ全体を画面幅にぴったり固定し、はみ出しをカットする */
+  /* 1. すべての要素の横幅計算を「枠線・余白込み」に統一する */
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* 2. 画面全体の左右の無駄なはみ出し・スクロールを完全に禁止する */
   html, body {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 100vw !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
   }
 
-  /* 2. すべての要素の横幅を「画面幅 - 左右余白」に強制収容する */
-  *, *::before, *::after {
-    box-sizing: border-box !important;
-  }
-
-  /* 3. コンテナや文章の幅を90%にし、左右にゆとりを作って画面中央に置く */
+  /* 3. すべてのコンテナ・カード・文章枠を画面幅（100%）の中に均等配置する */
   div, section, header, footer, main, article, container, [class] {
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding-left: 20px !important; /* 左右に20pxの安全な隙間を作る */
-    padding-right: 20px !important;
+    padding-left: 16px !important;  /* 左右均等に16pxの隙間を作る */
+    padding-right: 16px !important; /* これで右側に押し出されなくなります */
   }
 
-  /* 4. テキストを強制的に画面右端で改行させる */
+  /* 4. 文章が画面右端の16pxエリアに達したら強制的に次の行へ改行させる */
   p, h1, h2, h3, h4, span, li, a {
-    width: 100% !important;
-    max-width: 100% !important;
     white-space: normal !important;
-    word-break: break-all !important; /* どんな長文も右端で折る */
+    word-break: break-all !important;
     overflow-wrap: anywhere !important;
+  }
+
+  /* 5. 画像が画面幅を超えないようにする */
+  img, svg {
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
 </style>
