@@ -1229,33 +1229,43 @@ section{
 .contact__inner{
     min-width:0;
 }
- media (max-width: 768px) {
-  /* 1. 画面全体の「横スクロール（はみ出し）」を強制的に禁止する */
+<style>
+@media (max-width: 768px) {
+  /* 1. どのスマホ画面でも横スクロールが発生しないようにする */
   html, body {
+    width: 100% !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
-  /* 2. 全要素の幅計算を枠線・余白込みにして画面内に収める */
+  /* 2. 余白（padding）を含めたサイズ計算に固定する */
   *, *::before, *::after {
     box-sizing: border-box !important;
   }
 
-  /* 3. 幅が固定されている枠やセクションを100%以内に抑える */
-  header, section, footer, div, table, main, article {
+  /* 3. 幅が大きすぎる要素や文字の崩れを防ぐ */
+  header, section, footer, div, main, article, container {
     max-width: 100% !important;
-    width: auto !important;
-    word-break: break-word !important; /* 文字が長すぎても折り返す */
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* 4. 画像や表などが右にはみ出るのを防ぐ */
-  img, video, iframe, canvas, svg {
+  /* 4. テキストが画面外にはみ出すのを防ぎ、自動で折り返す */
+  p, h1, h2, h3, h4, span, li, a {
+    max-width: 100% !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* 5. 画像や動画を画面幅に自動伸縮させる */
+  img, video, iframe, svg {
     max-width: 100% !important;
     height: auto !important;
   }
 }
+</style>
 </style>
 </head>
 <body>
